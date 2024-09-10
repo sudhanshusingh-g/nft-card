@@ -1,0 +1,162 @@
+:root{
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --very-dark-blue-main-bg: hsl(217, 54%, 11%);
+    --very-dark-blue-card-bg: hsl(216, 50%, 16%);
+    --very-dark-blue-line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--very-dark-blue-main-bg);
+    color: var(--white);
+    font-size: 18px;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+h2{
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+h2:hover{
+    color: var(--cyan);
+}
+p{
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--soft-blue);
+}
+
+.nft_card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 320px;
+    background-color: var(--very-dark-blue-card-bg);
+    border-radius: 0.8rem;
+    box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.nft_card__image{
+    width: 100%;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; /* Ensures the overlay stays within the image bounds */
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 0.8rem;
+    z-index: 10;
+}
+
+.eye_icon{
+    width: 3rem; 
+    height: 3rem;
+    position: absolute;
+    z-index: 100;
+}
+
+
+.nft_card__image:hover .overlay{
+    opacity: 0.4; 
+}
+
+.nft_card__image:hover .eye_icon{
+    opacity: 1;
+    z-index: 20;
+}
+.nft_card__content{
+    border-bottom: 1px solid var(--very-dark-blue-line);
+}
+.eth_days{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    margin: 1rem 0;
+    justify-content: space-between;
+}
+.eth_logo{
+   width: 0.7rem;
+}
+.eth_days span:first-child{
+    color: var(--cyan);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+}
+.eth_days span:last-child{
+    display: flex;
+    align-items: center;
+    color: var(--soft-blue);
+    font-size: 0.9rem;
+    gap: 0.4rem;
+
+}
+
+.card_footer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+.creator{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid var(--soft-blue);
+}
+.creator_info{
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.creator_info span{
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.creator_info span:hover{
+    color: var(--cyan);
+}
